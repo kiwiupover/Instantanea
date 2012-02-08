@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% flash.each do |key, value |%>
+  <div class="flash <%= key %>"><%= value %></div>
+<% end %>
+<div id="user_nav">
+  <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+</div> 
 <%= yield %>
 
 </body>

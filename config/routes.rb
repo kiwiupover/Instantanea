@@ -1,15 +1,7 @@
 Instantanea::Application.routes.draw do
-  get "website/index"
+  resource :website
 
-  get "website/show"
-
-  get "website/new"
-
-  get "website/edit"
-
-  get "website/create"
-
-  get "website/destroy"
+  match "/auth/:provider/callback" => "sessions#create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
