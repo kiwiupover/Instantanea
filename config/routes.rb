@@ -2,6 +2,10 @@ Instantanea::Application.routes.draw do
   resource :website
 
   match "/auth/:provider/callback" => "sessions#create"
+  
+  match "/signout" => "sessions#destroy", :as => :signout  
+  
+  match "/auth/facebook?display=popup" => "sessions#create"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120208033940) do
+ActiveRecord::Schema.define(:version => 20120208043353) do
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.string   "screen_shot"
+    t.integer  "website_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "provider"
