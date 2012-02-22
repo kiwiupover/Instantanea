@@ -23,9 +23,14 @@ gem 'omniauth-facebook'
 
 gem 'imgkit'
 gem "rmagick"
-gem 'carrierwave' 
+gem 'carrierwave'
+
+gem 'delayed_job_active_record'              
+gem 'daemons' 
+gem "delayed_job_web" 
 
 gem 'nokogiri' 
+gem 'mechanize'
 
 gem 'pry-rails', :group => :development
 

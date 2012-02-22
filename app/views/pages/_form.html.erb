@@ -1,0 +1,13 @@
+<%= form_for @page do |f| %> 
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => "input-text" %>
+  </div>
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url, :class => "input-text" %>
+  </div> 
+  <div class="actions">
+    <%= f.submit "Create Landing Page", :class => "nice medium radius blue button" %>
+  </div>
+<% end %>

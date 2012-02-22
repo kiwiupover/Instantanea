@@ -1,13 +1,16 @@
 Instantanea::Application.routes.draw do
-  resource :website do
-    resource :pages
-  end
+  resources :websites
+  
+  resources :pages
+
 
   match "/auth/:provider/callback" => "sessions#create"
   
   match "/signout" => "sessions#destroy", :as => :signout  
   
-  match "/auth/facebook?display=popup" => "sessions#create"
+  match "/auth/facebook?display=popup" => "sessions#create"  
+  
+  match "/delayed_job" => DelayedJobWeb, :anchor => false
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -58,7 +61,7 @@ Instantanea::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'website#index'
+  root :to => 'websites#index'
 
   # See how all your routes lay out with "rake routes"
 
