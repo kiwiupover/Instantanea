@@ -1,5 +1,7 @@
 Instantanea::Application.routes.draw do
-  resource :website
+  resource :website do
+    resource :pages
+  end
 
   match "/auth/:provider/callback" => "sessions#create"
   

@@ -23,7 +23,11 @@ gem 'omniauth-facebook'
 
 gem 'imgkit'
 gem "rmagick"
-gem 'carrierwave'
+gem 'carrierwave' 
+
+gem 'nokogiri' 
+
+gem 'pry-rails', :group => :development
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
