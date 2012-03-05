@@ -29,11 +29,16 @@ gem 'delayed_job_active_record'
 gem 'daemons' 
 gem "delayed_job_web" 
 
+gem 'simple_form'
+
+
 gem 'nokogiri' 
 gem 'mechanize'
 
-gem 'pry-rails', :group => :development
-
+group :development do
+  gem 'pry-rails'
+  gem 'vagrant' 
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

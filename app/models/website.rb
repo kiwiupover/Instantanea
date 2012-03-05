@@ -1,6 +1,8 @@
 class Website < ActiveRecord::Base 
-  has_many :pages 
-  before_create :create_pages_from_xml 
+  # has_many :pages   
+  # before_create :create_pages_from_xml 
+  
+  mount_uploader :site_map, SitemapUploader 
   
   def download
     require 'open-uri'

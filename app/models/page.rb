@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
   belongs_to :website 
-  after_create :add_html, :page_thumbnails
+  # after_create :add_html, :page_thumbnails
   
   mount_uploader :screen_shot, ScreenShotUploader
   
@@ -19,8 +19,5 @@ class Page < ActiveRecord::Base
     self.screen_shot = File.open(path) 
     self.save!   
   end 
-
-  
-  
   
 end
