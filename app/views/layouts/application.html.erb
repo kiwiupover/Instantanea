@@ -10,8 +10,9 @@
 <div class="container">
   <div class="row">
     <% flash.each do |key, value |%>
-      <div class="alert-box <%= key %>"><%= value %></div> 
-      <a href="" class="close">&times;</a>
+      <div class="alert-box <%= key %> marg-top-half"><%= value %>
+        <a href="" class="close">&times;</a>
+      </div> 
     <% end %>
   </div>
 </div>

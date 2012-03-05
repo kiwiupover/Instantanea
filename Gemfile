@@ -62,5 +62,6 @@ group :test do
   gem "guard-spork"
   gem 'cucumber-rails'
   gem "database_cleaner"
-  gem 'guard-cucumber'
+  gem 'guard-cucumber' 
+  gem 'launchy'
 end

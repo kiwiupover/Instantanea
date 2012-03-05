@@ -1,5 +1,15 @@
-Factory.define :website do |w|
- w.name "Title" 
- w.url "http://dave.com"
- w.sitemap {File.open(Rails.root + "fixtures/dave.xml") } 
+# FactoryGirl.define do
+#   factory :user do
+#     sequence(:email){|n| "email#{n}@factory.com" }
+#     password "foobar"
+#     password_confirmation "foobar"
+#   end
+# end
+
+FactoryGirl.define do 
+  factory :website do
+    sequence(:name){ |n| "Title-Name-#{n}"} 
+    url "http://dave.com"
+    site_map {File.open(Rails.root + "fixtures/dave.xml") }
+  end 
 end

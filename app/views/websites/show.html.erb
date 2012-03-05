@@ -1,2 +1,4 @@
-<h1>Website#show</h1>
-<p>Find me in app/views/website/show.html.erb</p>
+<h2><%= @website.name %></h2>
+<p><%= link_to @website.url, @website.url %></p>
+<p><%= link_to @website.site_map, @website.site_map.url %></p>
+<p>Please wait for the pages to be captured, this will take a little while.</p>

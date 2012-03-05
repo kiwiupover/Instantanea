@@ -1,7 +1,7 @@
-<%= simple_form_for @website do |f| %> 
+<%= simple_form_for @website, :html => { :class => 'nice' } do |f| %> 
   <%= f.error_notification %>
   <%= f.input :name,      :input_html => { :class => "input-text" }  %>
   <%= f.input :url,       :input_html => { :class => "input-text" }  %>
-  <%= f.input :site_map,  :input_html => { :class => "input-text" }  %>
-  <%= f.button :submit %>
+  <%= f.input :site_map  %>
+  <%= f.submit nil, :class => "nice simple radius blue button" %>
 <% end %> 
