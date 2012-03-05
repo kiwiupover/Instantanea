@@ -7,21 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% flash.each do |key, value |%>
-  <div class="flash <%= key %>"><%= value %></div>
-<% end %>
-<div id="user_nav">
-  <% if current_user %>
-    Welcome, <%= current_user.name %>!
-    <%= link_to "Sign Out", signout_path %>
-  <% else %>
-    <%= link_to "Sign in with Twitter", "/auth/twitter" %> 
-    <%= link_to "Sign in with Facebook", "/auth/facebook" %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <% flash.each do |key, value |%>
+      <div class="alert-box <%= key %>"><%= value %></div> 
+      <a href="" class="close">&times;</a>
+    <% end %>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="columns three"></div>
+    <div class="columns nine">
+      <div id="user_nav">
+        <% if current_user %>
+          Welcome, <%= current_user.name %>!
+          <%= link_to "Sign Out", signout_path %>
+        <% else %>
+          <%= link_to "Sign in with Twitter", "/auth/twitter" %> 
+          <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <%= yield %> 
+  </div>
 </div>
 
  
-<%= yield %>
+
 
 </body>
 </html>

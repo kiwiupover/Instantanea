@@ -14,6 +14,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.1.5'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'zurb-foundation'
 end
 
 gem 'jquery-rails'  
@@ -30,6 +31,7 @@ gem 'daemons'
 gem "delayed_job_web" 
 
 gem 'simple_form'
+gem "url_formatter"
 
 
 gem 'nokogiri' 
@@ -53,7 +55,7 @@ end
 
 gem "rspec-rails", :group => [:test, :development]
 group :test do
-  gem "factory_girl"
+  gem 'factory_girl_rails'
   gem "capybara"
   gem "guard-rspec"
   gem "spork", "> 0.9.0.rc"

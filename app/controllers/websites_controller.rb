@@ -13,11 +13,10 @@ class WebsitesController < ApplicationController
   end
 
   def edit
-
   end
 
   def create
-   @website = Website.new(params[:id])  
+   @website = Website.create!(params[:website])  
    if @website.save
      redirect_to website_path(@website), :notice => "Website was created."
    else
@@ -27,11 +26,9 @@ class WebsitesController < ApplicationController
   end 
   
   def update
-
   end
 
   def destroy
-    
   end
       
 

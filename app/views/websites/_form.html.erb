@@ -1,13 +1,7 @@
-<%= form_for @website do |f| %> 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name, :class => "input-text" %>
-  </div>
-  <div class="field">
-    <%= f.label :url %>
-    <%= f.text_field :url, :class => "input-text" %>
-  </div> 
-  <div class="actions">
-    <%= f.submit "Create Landing Page", :class => "nice medium radius blue button" %>
-  </div>
+<%= simple_form_for @website do |f| %> 
+  <%= f.error_notification %>
+  <%= f.input :name,      :input_html => { :class => "input-text" }  %>
+  <%= f.input :url,       :input_html => { :class => "input-text" }  %>
+  <%= f.input :site_map,  :input_html => { :class => "input-text" }  %>
+  <%= f.button :submit %>
 <% end %> 
