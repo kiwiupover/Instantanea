@@ -5,6 +5,8 @@
 <ul class="block-grid five-up">
   <% @website.pages.each do |page| %>
    <li>
+      <% last_screen_shot = page.page_instances.last %>
+      <%= image_tag last_screen_shot.screen_shot.smallthumb.url, :class => "left border" %>
       <h6><%= link_to page.title, [@website, page] %></h6>
       <p>Last updated: <%= time_ago_in_words(page.updated_at) %></p>
    </li>
