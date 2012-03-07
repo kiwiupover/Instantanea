@@ -11,7 +11,8 @@ class PagesController < ApplicationController
   
   def create
     @page = @website.pages.create(params[:page])
-    if @page.save 
+    if @page.save!
+      Delayed::Job.enqueue CreatePageInstances.new(@page.id)  
       redirect_to @page, notice: 'The page was successfully created.' 
     else
       flash[:notice] = "Page was not created"

@@ -1,4 +1,8 @@
 Instantanea::Application.routes.draw do
+  get "page_instances/new"
+
+  get "page_instances/create"
+
   resources :websites do
     resources :pages 
   end

@@ -1,6 +1,3 @@
 <h2><%= @page.title %></h2>
 <p><%= @page.url %></p> 
-<p><%= image_tag @page.screen_shot.bigthumb.url  %></p>
-<p><%= image_tag @page.screen_shot.thumb.url  %></p>  
-<p><%= image_tag @page.screen_shot.smallthumb.url  %></p>
-<p><%= image_tag @page.screen_shot.url  %></p>
+<%= @page.page_instances %>

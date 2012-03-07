@@ -3,6 +3,11 @@ $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 set :rvm_type, :user 
 require 'rvm/capistrano'
 
+ssh_options[:forward_agent] = true
+default_run_options[:pty]  
+
+set :use_sudo, false
+
 set :application, "instantanea"
 set :repository,  "git@github.com:kiwiupover/Instantanea.git"
 
