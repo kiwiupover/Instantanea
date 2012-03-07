@@ -15,6 +15,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'zurb-foundation'
+  gem 'therubyracer'
 end
 
 gem 'jquery-rails'  
@@ -35,11 +36,12 @@ gem "url_formatter"
 
 
 gem 'nokogiri' 
-gem 'mechanize'
+gem 'mechanize' 
 
 group :development do
   gem 'pry-rails'
-  gem 'vagrant' 
+  gem 'vagrant'
+  gem 'capistrano' 
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -5,21 +5,25 @@ class Website < ActiveRecord::Base
   
   format_url :url
   
-  # has_many :pages   
-  # before_create :create_pages_from_xml 
+  has_many :pages   
+  # after_create :create_pages_from_xml 
   
   mount_uploader :site_map, SitemapUploader 
   
   def create_pages_from_xml
-    sitemap = File.open(Rails.root.join('fixtures/dave.xml'))
-    @sitemap = Nokogiri::XML(sitemap)
+    site_map_name = read_attribute :site_map
+    # sitemap = File.basename(site_map.url) 
+    # site_map = File.open(Rails.root.join("/uploads/website/site_map/#{id}/#{site_map_name}")) 
+    f = "#{Rails.root}/uploads/website/site_map/#{id}/#{site_map_name}"
+    site_map = File.open(f)
+    @sitemap = Nokogiri::XML(site_map)
     url = @sitemap.css("url loc")
     url.each do |page|
       page = page.text
-      Page.create(:url => page)
+      Page.create(:url => page, :website_id => id) 
     end
   end 
-  
+  handle_asynchronously :create_pages_from_xml 
   
   def download
     require 'open-uri'
