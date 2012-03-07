@@ -2,5 +2,7 @@
 <% if current_user %>
   <p>Find me in app/views/website/index.html.erb</p>
 <% end %>
-          
+<% @websites.each do |website| %>
+  <h3><%= link_to website.name, website %></h3>
+<% end %>          
 <%= current_user.name if current_user %>
