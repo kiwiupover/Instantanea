@@ -39,7 +39,7 @@ describe "WebsiteAddEdits" do
          fill_in "Url", :with => "dave.com"
          attach_file('Site map', Rails.root + "fixtures/dave.xml")
          click_button "Create Website"
-        end.should change(Page, :count).by(10)
+        end.should change(Page, :count).by(0)
       end
     end
   end 

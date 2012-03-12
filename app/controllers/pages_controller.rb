@@ -18,7 +18,26 @@ class PagesController < ApplicationController
       flash[:notice] = "Page was not created"
       render "new"
     end
-  end 
+  end
+  
+  def edit
+    
+  end
+  
+  def update
+    @page = Page.find(params[:pages_id])
+    @page_instance = PageInstance.find(@page.id).last
+    doc = Nokogiri::HTML(open("#{@page.url}"))
+    html = doc.to_html 
+    md5 = Digest::MD5.hexdigest(html)
+    if md5 != @page_instance.md5
+      Delayed::Job.enqueue CreatePageInstance.new(self.id)
+    end
+    # viste the website path
+    # make copy of the html and md5 hash it
+    # if the md5 hash is different start the page instance process 
+  end
+   
 private 
   def find_website 
     @website = Website.find(params[:website_id])

@@ -1,12 +1,12 @@
 Instantanea::Application.routes.draw do
-  get "page_instances/new"
-
-  get "page_instances/create"
 
   resources :websites do
-    resources :pages 
+    resources :pages do 
+      resources :page_instances
+    end 
   end
-
+  
+  match 'websites/:id/site_check/' => 'websites#site_check'
 
   match "/auth/:provider/callback" => "sessions#create"
   

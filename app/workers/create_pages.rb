@@ -12,11 +12,4 @@ class CreatePages < Struct.new(:id, :site_map)
     end
   end
 
-end  
-# class NewsletterJob < Struct.new(:text, :emails)
-#   def perform
-#     emails.each { |e| NewsletterMailer.deliver_text_to_email(text, e) }
-#   end
-# end
-# 
-# Delayed::Job.enqueue NewsletterJob.new('lorem ipsum...', Customers.find(:all).collect(&:email))          
+end    
