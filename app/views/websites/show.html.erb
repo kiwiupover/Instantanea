@@ -8,7 +8,7 @@
       <% last_screen_shot = page.page_instances.last %>
       <%= image_tag last_screen_shot.screen_shot.smallthumb.url, :class => "left border" if last_screen_shot %>
       <h6><%= link_to page.title, [@website, page] %></h6>
-      <p>Last updated: <%= time_ago_in_words(page.updated_at) %></p>
+      <p>Updated: <%= time_ago_in_words(page.updated_at) %> ago</p>
    </li>
   <% end %>
 </ul>

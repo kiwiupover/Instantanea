@@ -18,7 +18,7 @@ class WebsitesController < ApplicationController
   def create
    @website = Website.create!(params[:website])  
    if @website.save
-     Delayed::Job.enqueue CreatePages.new(@website.id, @website.site_map.url) 
+     Delayed::Job.enqueue CreatePages.new(@website.id) 
      redirect_to website_path(@website), :notice => "Website was created."
    else
      flash[:notice] = "Website was not created."

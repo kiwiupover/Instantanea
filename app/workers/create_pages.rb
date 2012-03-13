@@ -4,7 +4,7 @@ class CreatePages < Struct.new(:id)
     site_map_url = website.site_map_url
 
     sitemap_file = "#{Rails.root}/public#{site_map_url}"
-    read = SiteMapReader.new(sitemap_file)
+    reader = SiteMapReader.new(sitemap_file)
     
     reader.urls.each do |url|
       Page.create(:url => url, :website_id => id)
