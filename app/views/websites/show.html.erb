@@ -1,7 +1,7 @@
 <h2><%= @website.name %></h2>
+<p>Last updated: <%= time_ago_in_words(@website.updated_at) %></p>
 <p><%= link_to @website.url, @website.url %></p>
-<p><%= link_to @website.site_map, @website.site_map.url %></p>
-<%= content_tag p, "Please wait for the pages to be captured, this will take a little while." if @website.pages.blank? %>
+<%= content_tag "Please wait for the pages to be captured, this will take a little while." if @website.pages.blank? %>
 <ul class="block-grid five-up">
   <% @website.pages.each do |page| %>
    <li>

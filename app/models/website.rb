@@ -8,5 +8,8 @@ class Website < ActiveRecord::Base
   has_many :pages   
   
   mount_uploader :site_map, SitemapUploader  
-  
+
+  delegate :url,
+           :to => :site_map,
+           :prefix => true
 end

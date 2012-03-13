@@ -1,15 +1,13 @@
-class CreatePages < Struct.new(:id, :site_map)
-  
+class CreatePages < Struct.new(:id)
   def perform
-    website = Website.find(id) 
-    site_map_url = website.site_map.url 
-    site_map = File.open("#{Rails.root}/public#{site_map_url}")
-    @sitemap = Nokogiri::XML(site_map)
-    url = @sitemap.css("url loc")
-    url.each do |page|
-      page = page.text
-      Page.create(:url => page, :website_id => id) 
+    website = Website.find(id)
+    site_map_url = website.site_map_url
+
+    sitemap_file = "#{Rails.root}/public#{site_map_url}"
+    read = SiteMapReader.new(sitemap_file)
+    
+    reader.urls.each do |url|
+      Page.create(:url => url, :website_id => id)
     end
   end
-
-end    
+end

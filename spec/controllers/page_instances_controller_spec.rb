@@ -6,10 +6,6 @@ describe PageInstancesController do
     before(:each) do
       @page_instance = Factory(:page_instance)
     end
-    it "should return the right md5 hash" do
-      md5 = Digest::MD5.hexdigest(@page_instance.html)
-      md5.should == @page_instance.md5
-    end
     
     it "should return the same md5 hash if the page has not been updated" do
       @page = Page.find(5)
@@ -19,7 +15,7 @@ describe PageInstancesController do
       md5 = Digest::MD5.hexdigest(html)
       md5.should == @page_instance.md5
     end 
-    
+             
     it "if it works" do
       @page = Page.find(5) 
       doc = Nokogiri::HTML(open("#{@page.url}"))
