@@ -1,15 +1,25 @@
-<h2><%= @website.name %></h2>
-<p>Last updated: <%= time_ago_in_words(@website.updated_at) %></p>
-<p><%= link_to @website.url, @website.url %></p>
-<%= content_tag "Please wait for the pages to be captured, this will take a little while." if @website.pages.blank? %>
-<ul class="block-grid five-up">
-  <% @website.pages.each do |page| %>
-   <li>
-      <% last_screen_shot = page.page_instances.last %>
-      <%= image_tag last_screen_shot.screen_shot.smallthumb.url, :class => "left border" if last_screen_shot %>
-      <h6><%= link_to page.title, [@website, page] %></h6>
-      <p>Updated: <%= time_ago_in_words(page.updated_at) %> ago</p>
-   </li>
-  <% end %>
-</ul>
+<div class="columns six">
+  <h2><%= @website.name %></h2> 
+</div>
+<div class="columns six text-right">
+  <ul id="page-details">
+    <li><span>Last updated:</span> <%= time_ago_in_words(@website.updated_at) %> ago</li>
+    <li><span>Url: </span><%= link_to @website.url, @website.url %></li>
+    <li><span>Number of pages: </span><%= @website.pages.count %></li> 
+  </ul>
+</div>
 
+</div>
+<div class="row">
+  <%= content_tag :p, "Please wait for the pages to be captured, this will take a little while." if @website.pages.nil? %>
+  <ul id="pages" class="block-grid four-up">
+    <% @website.pages.each do |page| %>
+     <li>
+        <% last_screen_shot = page.page_instances.last %>
+        <%= link_to image_tag(last_screen_shot.screen_shot.thumb.url, :class => "left border"), [@website, page] if last_screen_shot %>
+        <h6><%= link_to page.title, [@website, page] %></h6>
+        <p class="right">Updated: <%= time_ago_in_words(page.updated_at) %> ago</p>
+     </li>
+    <% end %>
+  </ul>  
+</div>

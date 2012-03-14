@@ -1,0 +1,45 @@
+@import "mixins";
+@import "grid-helpers";
+
+body {
+	color: $text-color;
+	font-size:14px; 
+	background-image:url('../bg.jpg'); 
+} 
+
+h1,h2,h3,h4,h5,h6 {
+	color: $text-color;
+}
+
+#head {
+	height:60px;
+	@include gradiant-top(#D2B687, #B5965A);
+	@include shadow_bottom();
+	h1 { 
+		font-weight:300;
+	} 
+}
+#pages { 
+	li {
+		@include rounded(3px);
+		@include shadow(); 
+		.border {
+		
+		}
+		h6, p {padding:0 5%;} 
+		h6 {
+			padding-top:5px;
+			clear:both;}
+		p {margin-bottom:6px;}
+	} 
+
+} 
+#page-details {
+	li {
+		font-size:15px;
+		span {
+			font-style:italic;
+			font-weight:700;
+		}
+	}
+}                                                                               

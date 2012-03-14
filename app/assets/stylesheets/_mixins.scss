@@ -1,0 +1,57 @@
+//     Mixin and colors 
+$text_color: 					#493F2A;
+$anchor_color: 				#628728;
+$anchor_color_light:  lighten($anchor_color, 20%);
+$dark_blue:						#122954;					
+$ft_color:						#700402;
+
+@mixin rounded($radius: 6px) {
+  border-radius: $radius;
+	-o-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+@mixin shadow($color-rgba: rgba(0, 0, 0, 0.1)) {
+	box-shadow: 				 0 1px 4px $color-rgba;
+	-o-box-shadow: 			 0 1px 4px $color-rgba;
+	-moz-box-shadow: 		 0 1px 4px $color-rgba;
+	-webkit-box-shadow:  0 1px 4px $color-rgba;
+}
+
+@mixin shadow_bottom($color-rgba: rgba(0, 0, 0, 0.5)) {
+	box-shadow: 				 0 4px 6px -4px $color-rgba;
+	-o-box-shadow: 			 0 4px 6px -4px $color-rgba;
+	-moz-box-shadow: 		 0 4px 6px -4px $color-rgba;
+	-webkit-box-shadow:  0 4px 6px -4px $color-rgba;
+}
+
+@mixin inshadow( $size: 8px , $color: #000) {
+	box-shadow: 				inset 0px 0px $size $color;
+	-o-box-shadow: 			inset 0px 0px $size $color;
+	-moz-box-shadow: 		inset 0px 0px $size $color;
+	-webkit-box-shadow: inset 0px 0px $size $color;
+}
+@mixin roundshadow($color: #c6cddc) {
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) inset, -8px -8px 0 0 $color, 8px 8px 0 0 $color, 8px 0 0 0 $color, 0 8px 0 0 $color, 8px -8px 0 0 $color, -8px 8px 0 0 $color;
+	-o-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) inset, -8px -8px 0 0 $color, 8px 8px 0 0 $color, 8px 0 0 0 $color, 0 8px 0 0 $color, 8px -8px 0 0 $color, -8px 8px 0 0 $color;
+	-ms-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) inset, -8px -8px 0 0 $color, 8px 8px 0 0 $color, 8px 0 0 0 $color, 0 8px 0 0 $color, 8px -8px 0 0 $color, -8px 8px 0 0 $color;
+	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) inset, -8px -8px 0 0 $color, 8px 8px 0 0 $color, 8px 0 0 0 $color, 0 8px 0 0 $color, 8px -8px 0 0 $color, -8px 8px 0 0 $color;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) inset, -8px -8px 0 0 $color, 8px 8px 0 0 $color, 8px 0 0 0 $color, 0 8px 0 0 $color, 8px -8px 0 0 $color, -8px 8px 0 0 $color;
+}
+@mixin gradiant_left($color1: #af2d01, $color2: #700402) {
+	background-image: linear-gradient(				 left, $color1 0%, $color2 100%);
+	background-image: -o-linear-gradient(			 left, $color1 0%, $color2 100%);
+	background-image: -moz-linear-gradient(		 left, $color1 0%, $color2 100%);
+	background-image: -webkit-linear-gradient( left, $color1 0%, $color2 100%);
+	background-image: -ms-linear-gradient(		 left, $color1 0%, $color2 100%);
+} 
+@mixin gradiant_top($color1: #af2d01, $color2: #700402) {
+	background-image: linear-gradient(				 top, $color1 0%, $color2 100%);
+	background-image: -o-linear-gradient(			 top, $color1 0%, $color2 100%);
+	background-image: -moz-linear-gradient(		 top, $color1 0%, $color2 100%);
+	background-image: -webkit-linear-gradient( top, $color1 0%, $color2 100%);
+	background-image: -ms-linear-gradient(		 top, $color1 0%, $color2 100%);
+}  
+@mixin textshadow(){
+	text-shadow: 0 1px rgba(0,0,0,0.2);
+}

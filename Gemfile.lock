@@ -93,6 +93,8 @@ GEM
     factory_girl_rails (1.5.0)
       factory_girl (~> 2.4.0)
       railties (>= 3.0.0)
+    fancybox-rails (0.1.4)
+      railties (>= 3.1.0)
     faraday (0.7.6)
       addressable (~> 2.2)
       multipart-post (~> 1.1)
@@ -269,6 +271,7 @@ GEM
     virtualbox (0.7.5)
       ffi (>= 0.6.3)
     webrobots (0.0.13)
+    will_paginate (3.0.2)
     xpath (0.1.4)
       nokogiri (~> 1.3)
     zurb-foundation (2.1.5.1)
@@ -289,6 +292,7 @@ DEPENDENCIES
   delayed_job_active_record
   delayed_job_web
   factory_girl_rails
+  fancybox-rails
   guard-cucumber
   guard-rspec
   guard-spork
@@ -310,4 +314,5 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   url_formatter
   vagrant
+  will_paginate
   zurb-foundation

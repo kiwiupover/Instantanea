@@ -2,7 +2,13 @@
 <p><%= @page.url %></p> 
 <% instance = @page.page_instances.last %>
 <p>Last updated: <%= time_ago_in_words(instance.updated_at) %></p>
-<p><%= image_tag instance.screen_shot.bigthumb.url  %></p>
-<p><%= image_tag instance.screen_shot.thumb.url  %></p>  
-<p><%= image_tag instance.screen_shot.smallthumb.url  %></p>
-<p><%= image_tag instance.screen_shot.url  %></p>
+<p><%= link_to image_tag(instance.screen_shot.bigthumb.url), instance.screen_shot.url, :class => "lightbox"  %></p>
+
+<ul id="pages" class="marg-top block-grid four-up">
+  <% @page.page_instances.each do |pi|  %> 
+    <li>
+      <%= image_tag pi.screen_shot.thumb.url, :class => "left border"%>
+      <p class="right">Date: <%= pi.updated_at %></p>
+    </li>
+  <% end %>
+</ul> 

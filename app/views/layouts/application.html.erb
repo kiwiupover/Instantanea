@@ -7,6 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<header id="head" class="container">
+  <div class="row">
+    <div class="columns three"><h1>Instantanea</h1></div>
+    <div class="columns nine">
+      <div id="user_nav" class="pad-top-half right">
+        <% if current_user %>
+          Welcome, <%= current_user.name %>!
+          <%= link_to "Sign Out", signout_path %>
+        <% else %>
+          <%= link_to "Sign in with Twitter", "/auth/twitter", :class => "button nice simple small round white" %> 
+          <%= link_to "Sign in with Facebook", "/auth/facebook", :class => "button nice simple small round white"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
 <div class="container">
   <div class="row">
     <% flash.each do |key, value |%>
@@ -14,22 +31,6 @@
         <a href="" class="close">&times;</a>
       </div> 
     <% end %>
-  </div>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="columns three"></div>
-    <div class="columns nine">
-      <div id="user_nav">
-        <% if current_user %>
-          Welcome, <%= current_user.name %>!
-          <%= link_to "Sign Out", signout_path %>
-        <% else %>
-          <%= link_to "Sign in with Twitter", "/auth/twitter" %> 
-          <%= link_to "Sign in with Facebook", "/auth/facebook" %>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>
 <div class="container">

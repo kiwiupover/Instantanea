@@ -26,6 +26,8 @@ gem 'imgkit'
 gem "rmagick"
 gem 'carrierwave'
 
+gem 'will_paginate'
+
 gem 'delayed_job_active_record'              
 gem 'daemons' 
 gem "delayed_job_web" 
@@ -33,6 +35,7 @@ gem "delayed_job_web"
 gem 'simple_form'
 gem "url_formatter"
 
+gem 'fancybox-rails'
 
 gem 'nokogiri' 
 gem 'mechanize' 
