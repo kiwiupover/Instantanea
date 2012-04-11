@@ -38,7 +38,9 @@ gem "url_formatter"
 gem 'fancybox-rails'
 
 gem 'nokogiri' 
-gem 'mechanize' 
+gem 'mechanize'  
+
+gem 'spidr'
 
 group :development do
   gem 'pry-rails'
