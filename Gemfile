@@ -69,5 +69,7 @@ group :test do
   gem 'cucumber-rails'
   gem "database_cleaner"
   gem 'guard-cucumber' 
-  gem 'launchy'
+  gem 'launchy' 
+  gem 'vcr'
+  gem 'webmock', '~>1.8.0'
 end
